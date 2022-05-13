@@ -1,0 +1,35 @@
+
+
+package lp.controllers.settings;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+
+public class Marks1Controller extends SettingsController implements Initializable {
+
+    @FXML private MarksCommonController commonController;
+    @FXML private Button saveBtn;
+    
+    public Marks1Controller() {
+        super();
+    }
+
+    @Override
+    protected void saveSettings() {
+        super.saveSettings();
+        commonController.saveSettings();
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        commonController.setTpl("MARKS_1");
+        commonController.completeInitialize();
+        saveBtn.setOnAction(evt -> {
+            saveSettings();
+        });
+    }
+
+}
