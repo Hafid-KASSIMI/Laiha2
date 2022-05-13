@@ -1,0 +1,512 @@
+/* 
+    Author     : H. KASSIMI
+*/
+
+
+.back-panel {
+    -fx-background-color: -fx-nm-color-4;
+}
+
+.main-panel {
+    -fx-background-image: url("../resources/images/background.png");
+    -fx-background-attachment: fixed;
+    -fx-background-position: center center;
+    -fx-background-repeat: repeat;
+    -fx-background-size: cover;
+}
+
+.bottom-bar {
+    -fx-border-width: 0 0 5 0;
+    -fx-border-color: -fx-nm-color-2;
+}
+
+.title {
+    -fx-font-size: 16;
+    -fx-font-weight: 700;
+}
+
+.btn {
+    -fx-background-color: -fx-nm-color-3;
+    -fx-text-fill: -fx-nm-white;
+    -fx-font-size: 16;
+}
+
+.btn:hover {
+    -fx-background-color: -fx-nm-dark-grey;
+}
+
+.btn:focused {
+    -fx-background-color: derive(-fx-nm-color-3, 30%);
+    -fx-text-fill: -fx-nm-color-5;
+}
+
+.transparent-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-nm-color-3;
+    -fx-font-size: 16;
+}
+
+.transparent-btn:hover {
+    -fx-text-fill: -fx-nm-dark-grey;
+}
+
+.transparent-btn:focused {
+    -fx-text-fill: derive(-fx-nm-color-3, 30%);
+}
+
+.check-box .box {
+    -fx-border-width: 0.7;
+    -fx-border-color: -fx-nm-dark-grey;
+    -fx-background-color: -fx-nm-light-grey;
+    -fx-padding: 3 4 4 4;
+}
+
+.check-box:selected .box {
+    -fx-background-color: -fx-nm-color-3;
+}
+
+.check-box:hover .box {
+    -fx-background-color: -fx-nm-dark-grey;
+}
+
+.check-box:focused .box {
+    -fx-border-color: -fx-nm-color-5;
+    -fx-background-color: derive(-fx-nm-color-3, 30%);
+}
+
+.check-box:selected:focused .mark, .check-box:selected:hover .mark {
+    -fx-background-color: -fx-nm-color-5;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: -fx-nm-light-grey;
+}
+
+.pdf-info, .xl-info {
+    -fx-text-fill: -fx-nm-color-5;
+}
+
+.status-bar {
+    -fx-background-color: -fx-nm-color-1;
+    -fx-text-fill: -fx-nm-white;
+    -fx-padding: 2 4 2 4;
+    -fx-border-color: -fx-nm-color-4;
+    -fx-border-width: 1 0 0 0;
+}
+
+.status-bar .label {
+    -fx-text-fill: -fx-nm-white;
+    -fx-font-size: 14;
+}
+
+.right-bar {
+    -fx-border-width: 0 1.5 0 0;
+    -fx-border-color: -fx-nm-white;
+}
+
+.sidebar {
+    -fx-border-width: 0;
+    -fx-border-color: none;
+}
+
+.sidebar, .sidebar .content, .tpl-list {
+    -fx-border-color: none;
+    -fx-border-width: 0;
+    -fx-background-color: -fx-nm-color-1;
+}
+
+.body-title {
+    -fx-text-fill: -fx-nm-black;
+}
+
+.sidebar-title {
+    -fx-text-fill: -fx-nm-white;
+}
+
+.pdf-pb .track, .xl-pb .track {
+    -fx-background-color: -fx-nm-light-grey;
+    -fx-border-width: 1;
+    -fx-border-color: -fx-nm-light-grey;
+}
+
+.pdf-pb .bar, .xl-pb .bar {
+    -fx-background-color: -fx-nm-color-2;
+}
+
+.icm {
+    -fx-font-size: 16;
+}
+
+.icm, .info, .icon {
+    -fx-font-family: "IcoMoon-Free";
+}
+
+.menu-bar {
+    -fx-background-color: -fx-nm-light-grey;
+    -fx-border-width: 0 0 0.25 0;
+    -fx-border-color: -fx-nm-color-5;
+}
+
+.menu-bar > .container > .menu-button > .label,
+.menu-item .label {
+    -fx-text-fill: -fx-nm-color-5;
+}
+
+.menu-bar > .container > .menu-button:hover,
+.menu-bar > .container > .menu-button:focused,
+.menu-bar > .container > .menu-button:showing,
+.menu-item:focused, .menu-item:hovered {
+    -fx-background-color: -fx-nm-color-2;
+}
+
+.context-menu {
+    -fx-background-color: -fx-nm-light-grey;
+}
+
+.generate {
+    -fx-font-weight: 700;
+}
+
+.overlay {
+    -fx-background-color: rgba(0, 0, 0, 0.75);
+}
+
+.available-list, .tree-view {
+    -fx-border-width: 0.5;
+    -fx-border-color: -fx-nm-color-5;
+}
+
+.available-list:focused, .tree-view:focused {
+    -fx-border-color: -fx-nm-color-3;
+}
+
+.available-list, .available-list .list-cell:even, .available-list .list-cell:odd, 
+.available-list .list-cell:empty, .tree-view .tree-cell { 
+    -fx-background-color: -fx-nm-white;
+}
+
+.available-list .list-cell:filled:hover, .tree-view .tree-cell:filled:hover {
+    -fx-background-color: derive(-fx-nm-color-2, 25%);
+    -fx-text-fill: -fx-nm-color-5;
+}
+
+.available-list .list-cell:selected, .tree-view .tree-cell:selected {
+    -fx-background-color: -fx-nm-color-2;
+    -fx-text-fill: -fx-nm-color-5;
+}
+
+.tree-view .tree-cell:selected .arrow {
+    -fx-background-color: -fx-nm-color-5;
+}
+
+.template .toggle-button {
+    -fx-font-family: "IcoMoon-Free";
+    -fx-font-size: 76;
+    -fx-text-fill: transparent;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-color: transparent;
+}
+
+.template .toggle-button:selected {
+    -fx-text-fill: -fx-nm-color-3;
+}
+
+.template.selected {
+    -fx-background-color: -fx-nm-color-3;
+}
+
+.template.selected .polygon {
+    -fx-fill: -fx-nm-color-3;
+}
+
+.template.selected .num {
+    -fx-text-fill: -fx-nm-white;
+    -fx-font-weight: 700;
+}
+
+.template.hover, .template.normal:hover, .template.normal:focused {
+    -fx-background-color: -fx-nm-color-4;
+}
+
+.template.hover .polygon, .template.normal:hover .polygon, 
+.template.normal:focused .polygon {
+    -fx-fill: -fx-nm-color-4;
+}
+
+.template.hover .num, .template.normal .num, .template.normal:hover .num, 
+.template.normal:focused .num {
+    -fx-text-fill: -fx-nm-white;
+}
+
+.template.normal {
+    -fx-padding: 6;
+}
+
+.template.selected .btn, .template.normal .btn {
+    -fx-opacity: 0;
+}
+
+.template.hover .btn {
+    -fx-opacity: 1;
+}
+
+.num {
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+}
+
+.tooltip {
+    -fx-background-color: -fx-nm-color-5;
+    -fx-font-size: 12;
+    -fx-font-family: "Tahoma";
+}
+
+.modal {
+    -fx-border-width: 0.5;
+    -fx-border-color: -fx-nm-color-5;
+    -fx-background-color: -fx-nm-color-1;
+}
+
+.modal .label {
+    -fx-text-fill: -fx-nm-white;
+}
+
+.modal .tick {
+    -fx-text-fill: -fx-nm-white;
+    -fx-font-size: 72;
+}
+
+.modal .transparent-btn {
+    -fx-font-size: 12;
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-nm-white;
+}
+
+.modal .transparent-btn:hover {
+    -fx-text-fill: -fx-nm-color-3;
+}
+
+.modal .btn {
+    -fx-font-size: 14;
+}
+.modal .btn {
+    -fx-font-size: 12;
+    -fx-font-family: "Tahoma";
+}
+
+.modal .btn .label {
+    -fx-font-size: 12;
+    -fx-text-fill: -fx-nm-white;
+}
+
+.modal .counter {
+    -fx-font-size: 12;
+    -fx-text-fill: -fx-nm-white;
+}
+
+.modal .message {
+    -fx-padding: 4;
+    -fx-font-size: 14;
+    -fx-font-family: "Tahoma";
+    -fx-text-fill: -fx-nm-white;
+}
+
+.modal .light {
+    -fx-text-fill: -fx-nm-white;
+}
+
+.modal .title {
+    -fx-padding: 4;
+    -fx-font-size: 14;
+    -fx-font-family: "Tahoma";
+    -fx-text-fill: -fx-nm-white;
+    -fx-font-weight: 700;
+}
+
+.modal .toggle-button {
+    -fx-border-width: 0;
+    -fx-background-color: derive(-fx-nm-color-5, 90%);
+    -fx-background-radius: 0;
+    -fx-text-fill: -fx-nm-color-5;
+}
+
+.modal .toggle-button:hover {
+    -fx-background-color: -fx-nm-dark-grey;
+    -fx-text-fill: -fx-nm-white;
+}
+
+.modal .toggle-button:selected, .modal .toggle-button:selected:hover {
+    -fx-background-color: derive(-fx-nm-color-2, 60%);
+    -fx-text-fill: -fx-nm-black;
+}
+
+.modal .toggle-button:focused {
+    -fx-background-color: derive(-fx-nm-color-2, 30%);
+}
+
+.radio-button .radio {
+    -fx-background-color: -fx-nm-light-grey;
+}
+
+.radio-button:selected .dot {
+    -fx-background-color: -fx-nm-color-5;
+}
+
+.radio-button:hover .radio {
+    -fx-background-color: -fx-nm-dark-grey;
+}
+
+.radio-button:focused .radio {
+    -fx-background-color: derive(-fx-nm-color-2, 30%);
+}
+
+.text-field {
+    -fx-background-color: derive(-fx-nm-color-5, 150%);
+    -fx-background-radius: 0;
+    -fx-highlight-fill: -fx-nm-color-2;
+    -fx-highlight-text-fill: -fx-nm-color-5;
+}
+
+.text-field:hover {
+    -fx-background-color: derive(-fx-nm-color-2, 30%);
+    -fx-text-fill: -fx-nm-black;
+}
+
+.text-field:focused, .text-field:focused:hover {
+    -fx-background-color: -fx-nm-dark-grey;
+    -fx-text-fill: -fx-nm-white;
+}
+
+.combo-box, .combo-box .list-view {
+    -fx-border-width: 0.5 0.5 0.5 0.5;
+    -fx-border-color: -fx-nm-color-5;
+    -fx-background-color: -fx-nm-light-grey;
+    -fx-text-fill: -fx-nm-black;
+}
+
+.combo-box .arrow {
+    -fx-background-color: -fx-nm-color-5;
+}
+
+.combo-box .list-view {
+    -fx-border-width: 0 0.5 0.5 0.5;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: -fx-nm-light-grey;
+    -fx-text-fill: -fx-nm-black;
+}
+
+.combo-box .list-cell:hover {
+    -fx-background-color: derive(-fx-nm-color-2, 30%);
+}
+
+.combo-box .list-view .list-cell:selected {
+    -fx-text-fill: -fx-nm-color-3;
+}
+
+.tab-pane .tab-header-background {
+    -fx-background-color: derive(-fx-nm-color-1, -1%);
+    -fx-border-width: 0 0 2 0;
+    -fx-border-color: -fx-nm-color-2;
+    
+}
+
+.tab-pane .tab {
+    -fx-border-width: 0.5 0.5 2 0.5;
+    -fx-border-color: -fx-nm-color-2;
+    -fx-background-color: derive(-fx-nm-color-1, 20%);
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: -fx-nm-color-2;
+}
+
+.tab-pane:focused .tab:selected .focus-indicator {
+    -fx-border-width: 0;
+}
+
+.tab-pane .tab-label {
+    -fx-text-fill: -fx-nm-white;
+}
+
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: -fx-nm-color-5;
+    -fx-border-width: 0;
+}
+
+.tab-pane .control-buttons-tab {
+    -fx-border-width: 4;
+    -fx-border-color: -fx-nm-color-3;
+    -fx-background-color: derive(-fx-nm-color-1, 20%);
+}
+
+.emphasize {
+    -fx-font-size: 14;
+    -fx-padding: 4;
+    -fx-text-fill: -fx-nm-color-3;
+}
+
+.image-preview {
+    -fx-border-width: 1 1 5 1;
+    -fx-border-color: -fx-nm-color-2;
+}
+
+
+/**********************/
+
+.text-area {
+    -fx-highlight-fill: -fx-nm-color-2;
+    -fx-highlight-text-fill: -fx-nm-color-5;
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0;
+}
+
+.text-area .content:focused {
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+}
+
+.text-area .content {
+    -fx-background-color: derive(-fx-nm-color-5, 150%);
+    -fx-background-radius: 0;
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+}
+
+.text-area:focused .content, .text-area:focused:hover .content {
+    -fx-background-color: derive(-fx-nm-color-2, 30%);
+    -fx-text-fill: -fx-nm-black;
+}
+
+.modal .color-palette {
+    -fx-background-color: -fx-nm-color-1;
+}
+
+.color-palette .hyperlink, .color-palette .tooltip, .color-palette .separator {
+    visibility: hidden;
+    -fx-min-height: 0;
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
+}
+
+.color-palette-region > .color-square.hover-square {
+    -fx-background-color: derive(-fx-nm-color-2, 30%);
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-scale-x: 2;
+    -fx-scale-y: 2;
+}
+
+.combo-box-base.color-picker {
+    -fx-border-width: 0.5 0.5 0.5 0.5;
+    -fx-border-color: -fx-nm-color-5;
+    -fx-background-color: -fx-nm-light-grey;
+    -fx-text-fill: transparent;
+}
+
+.combo-box-base.color-picker .arrow {
+    -fx-background-color: -fx-nm-color-5;
+}
