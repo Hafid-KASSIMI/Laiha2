@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="600.0" stylesheets="@../styles/theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lp.controllers.MainWindowController">
+   <children>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0">
+         <children>
+            <MenuBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="menu-bar">
+               <menus>
+                  <Menu mnemonicParsing="false" text="%FILE">
+                     <items>
+                        <MenuItem fx:id="exitMI" mnemonicParsing="false" text="%CLOSE">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="W" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="%EDIT">
+                     <items>
+                        <MenuItem fx:id="addMarksMI" mnemonicParsing="false" text="%ADDITIONAL_DATA" visible="false">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="PLUS" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <SeparatorMenuItem mnemonicParsing="false" visible="false" />
+                        <MenuItem fx:id="reloadMI" mnemonicParsing="false" text="%RELOAD_SAVED_DBS">
+                           <graphic>
+                              <Label text="">
+                                 <styleClass>
+                                    <String fx:value="icm" />
+                                    <String fx:value="menu-item-icm" />
+                                 </styleClass>
+                              </Label>
+                           </graphic>
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="R" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="forgetMI" mnemonicParsing="false" text="%FORGET_SAVED_DBS">
+                           <graphic>
+                              <Label text="">
+                                 <styleClass>
+                                    <String fx:value="icm" />
+                                    <String fx:value="menu-item-icm" />
+                                 </styleClass>
+                              </Label>
+                           </graphic>
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="Z" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <CheckMenuItem fx:id="saveCMI" mnemonicParsing="false" text="%SAVE_LOADED_ON_CLOSE">
+                           <graphic>
+                              <Label text="">
+                                 <styleClass>
+                                    <String fx:value="icm" />
+                                    <String fx:value="menu-item-icm" />
+                                 </styleClass>
+                              </Label>
+                           </graphic>
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="S" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </CheckMenuItem>
+                     </items>
+                  </Menu>
+                  <Menu fx:id="avaTplsMenu" mnemonicParsing="false" text="%AVAILABLE_TEMPLATES_NO_SC" />
+                  <Menu mnemonicParsing="false" text="%LANGUAGE">
+                     <items>
+                        <RadioMenuItem fx:id="arRMI" mnemonicParsing="false" text="%ARABIC">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="U" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="langTG" />
+                           </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem fx:id="frRMI" mnemonicParsing="false" text="%FRENCH" toggleGroup="$langTG">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="F" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </RadioMenuItem>
+                        <RadioMenuItem fx:id="enRMI" mnemonicParsing="false" text="%ENGLISH" toggleGroup="$langTG">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="E" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </RadioMenuItem>
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="%QUESTION_MARK">
+                     <items>
+                        <MenuItem fx:id="aboutMI" mnemonicParsing="false" text="%ABOUT">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="A" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="back-panel" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="main-panel" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER" spacing="12.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <VBox spacing="12.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <HBox spacing="6.0" VBox.vgrow="NEVER">
+                                       <children>
+                                          <Label text="%AVAILABLE_GROUPS">
+                                             <styleClass>
+                                                <String fx:value="title" />
+                                                <String fx:value="body-title" />
+                                                <String fx:value="bottom-bar" />
+                                             </styleClass>
+                                             <HBox.margin>
+                                                <Insets right="12.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Button fx:id="addGroupsBtn" alignment="CENTER" contentDisplay="TEXT_ONLY" graphicTextGap="0.0" maxWidth="1.7976931348623157E308" minHeight="32.0" minWidth="32.0" mnemonicParsing="false" text="" textAlignment="CENTER" wrapText="true">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="icm" />
+                                                <String fx:value="btn" />
+                                             </styleClass>
+                                          </Button>
+                                          <Button fx:id="clearGroupsBtn" alignment="CENTER" contentDisplay="TEXT_ONLY" disable="true" graphicTextGap="0.0" maxWidth="1.7976931348623157E308" minHeight="32.0" minWidth="32.0" mnemonicParsing="false" text="" textAlignment="CENTER" wrapText="true">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="icm" />
+                                                <String fx:value="btn" />
+                                             </styleClass>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <TreeView fx:id="avaGrpsTV" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" showRoot="false" VBox.vgrow="ALWAYS">
+                                       <styleClass>
+                                          <String fx:value="p" />
+                                          <String fx:value="available-list" />
+                                       </styleClass></TreeView>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" spacing="6.0">
+                                 <children>
+                                    <Button fx:id="addBtn" disable="true" maxWidth="1.7976931348623157E308" minHeight="32.0" minWidth="64.0" mnemonicParsing="false" text="">
+                                       <styleClass>
+                                          <String fx:value="icm" />
+                                          <String fx:value="btn" />
+                                       </styleClass>
+                                    </Button>
+                                    <Button fx:id="addAllBtn" maxWidth="1.7976931348623157E308" minHeight="32.0" minWidth="64.0" mnemonicParsing="false" text="">
+                                       <styleClass>
+                                          <String fx:value="icm" />
+                                          <String fx:value="btn" />
+                                       </styleClass>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="22.0" layoutY="22.0" spacing="12.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <HBox>
+                                       <children>
+                                          <Label text="%SELECTED_GROUPS">
+                                             <styleClass>
+                                                <String fx:value="title" />
+                                                <String fx:value="body-title" />
+                                                <String fx:value="bottom-bar" />
+                                             </styleClass>
+                                          </Label>
+                                          <Button fx:id="dummy" alignment="CENTER" contentDisplay="TEXT_ONLY" graphicTextGap="0.0" maxWidth="1.7976931348623157E308" minHeight="32.0" minWidth="32.0" mnemonicParsing="false" text="" textAlignment="CENTER" visible="false" wrapText="true">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="icm" />
+                                                <String fx:value="transparent-btn" />
+                                             </styleClass>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <ListView fx:id="selGrpsLV" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+                                       <styleClass>
+                                          <String fx:value="p" />
+                                          <String fx:value="available-list" />
+                                       </styleClass></ListView>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" spacing="6.0" HBox.hgrow="SOMETIMES">
+                                 <children>
+                                    <Button fx:id="upBtn" alignment="CENTER" contentDisplay="TEXT_ONLY" disable="true" graphicTextGap="0.0" maxWidth="1.7976931348623157E308" minHeight="32.0" minWidth="32.0" mnemonicParsing="false" text="" textAlignment="CENTER" wrapText="true">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="icm" />
+                                          <String fx:value="btn" />
+                                       </styleClass>
+                                    </Button>
+                                    <Button fx:id="downBtn" alignment="CENTER" contentDisplay="TEXT_ONLY" disable="true" graphicTextGap="0.0" maxWidth="1.7976931348623157E308" minHeight="32.0" minWidth="32.0" mnemonicParsing="false" text="" textAlignment="CENTER" wrapText="true">
+                                       <VBox.margin>
+                                          <Insets bottom="12.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="icm" />
+                                          <String fx:value="btn" />
+                                       </styleClass>
+                                    </Button>
+                                    <Button fx:id="deleteBtn" alignment="CENTER" contentDisplay="TEXT_ONLY" disable="true" graphicTextGap="0.0" maxWidth="1.7976931348623157E308" minHeight="32.0" minWidth="32.0" mnemonicParsing="false" text="" textAlignment="CENTER" wrapText="true">
+                                       <VBox.margin>
+                                          <Insets top="12.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="icm" />
+                                          <String fx:value="btn" />
+                                       </styleClass>
+                                    </Button>
+                                    <Button fx:id="clearBtn" alignment="CENTER" contentDisplay="TEXT_ONLY" disable="true" graphicTextGap="0.0" maxWidth="1.7976931348623157E308" minHeight="32.0" minWidth="32.0" mnemonicParsing="false" text="" textAlignment="CENTER" wrapText="true">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="icm" />
+                                          <String fx:value="btn" />
+                                       </styleClass>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                           </padding>
+                        </HBox>
+                        <HBox spacing="64.0">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="12.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label text="%GENERAL_OPTIONS">
+                                       <VBox.margin>
+                                          <Insets bottom="6.0" />
+                                       </VBox.margin>
+                                       <styleClass>
+                                          <String fx:value="title" />
+                                          <String fx:value="body-title" />
+                                          <String fx:value="bottom-bar" />
+                                       </styleClass>
+                                    </Label>
+                                    <CheckBox fx:id="oneShtCB" mnemonicParsing="false" styleClass="options" text="%TWO_SHEETS_PER_GROUP" />
+                                    <CheckBox fx:id="oneFileCB" layoutX="10.0" layoutY="27.0" mnemonicParsing="false" styleClass="options" text="%ONE_FILE_PER_GROUP" />
+                                    <CheckBox fx:id="exportPdfCB" layoutX="10.0" layoutY="44.0" mnemonicParsing="false" styleClass="options" text="%PDF_EXPORT" />
+                                    <CheckBox fx:id="exportXlCB" layoutX="10.0" layoutY="61.0" mnemonicParsing="false" styleClass="options" text="%XL_EXPORT" />
+                                    <Label text="%OUTPUT_DIR">
+                                       <VBox.margin>
+                                          <Insets bottom="6.0" top="6.0" />
+                                       </VBox.margin>
+                                       <styleClass>
+                                          <String fx:value="title" />
+                                          <String fx:value="body-title" />
+                                          <String fx:value="bottom-bar" />
+                                       </styleClass>
+                                    </Label>
+                                    <HBox alignment="CENTER_LEFT">
+                                       <children>
+                                          <TextField fx:id="outDirTF" editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="path-tf" HBox.hgrow="ALWAYS" />
+                                          <Button fx:id="outDirBtn" maxHeight="1.7976931348623157E308" minWidth="32.0" mnemonicParsing="false" text="">
+                                             <styleClass>
+                                                <String fx:value="icm" />
+                                                <String fx:value="btn" />
+                                                <String fx:value="path-btn" />
+                                             </styleClass>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="160.0" spacing="6.0">
+                                 <children>
+                                    <fx:include fx:id="pi" source="ProgressIndicator.fxml" visible="false" />
+                                    <HBox fx:id="pdfHB" alignment="CENTER" spacing="4.0" visible="false">
+                                       <children>
+                                          <ProgressBar fx:id="pdfPB" maxWidth="1.7976931348623157E308" progress="0.23" styleClass="pdf-pb" HBox.hgrow="ALWAYS" />
+                                          <Label maxWidth="1.7976931348623157E308" text="">
+                                             <styleClass>
+                                                <String fx:value="info" />
+                                                <String fx:value="pdf-info" />
+                                             </styleClass>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" spacing="4.0" visible="false" fx:id="xlHB">
+                                       <children>
+                                          <ProgressBar maxWidth="1.7976931348623157E308" progress="0.45" styleClass="xl-pb" HBox.hgrow="ALWAYS" fx:id="xlPB" />
+                                          <Label maxWidth="1.7976931348623157E308" text="">
+                                             <styleClass>
+                                                <String fx:value="info" />
+                                                <String fx:value="xl-info" />
+                                             </styleClass>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <Button fx:id="generateBtn" maxWidth="1.7976931348623157E308" minHeight="64.0" minWidth="140.0" mnemonicParsing="false" text="%GENERATE">
+                                       <styleClass>
+                                          <String fx:value="generate" />
+                                          <String fx:value="btn" />
+                                       </styleClass>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="rightBarVB" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="300.0" spacing="12.0" styleClass="sidebar">
+                     <children>
+                        <Label text="%AVAILABLE_TEMPLATES">
+                           <VBox.margin>
+                              <Insets left="6.0" right="6.0" />
+                           </VBox.margin>
+                           <styleClass>
+                              <String fx:value="title" />
+                              <String fx:value="sidebar-title" />
+                              <String fx:value="bottom-bar" />
+                           </styleClass>
+                        </Label>
+                        <ScrollPane fx:id="tplsSP" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" pannable="true" styleClass="tpl-list" VBox.vgrow="ALWAYS">
+                           <content>
+                              <VBox fx:id="templatesVB" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="3.0" styleClass="content">
+                                 <padding>
+                                    <Insets left="6.0" right="6.0" />
+                                 </padding></VBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="2.0" top="12.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" spacing="6.0" styleClass="status-bar">
+               <children>
+                  <FlowPane fx:id="langNotification" alignment="CENTER_LEFT" columnHalignment="CENTER" hgap="6.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" styleClass="info" text="" />
+                        <Label maxWidth="1.7976931348623157E308" text="%LANGUAGE_NOTIFICATION" />
+                     </children>
+                     <padding>
+                        <Insets bottom="3.0" left="6.0" right="6.0" top="3.0" />
+                     </padding>
+                  </FlowPane>
+                  <Label styleClass="right-bar">
+                     <HBox.margin>
+                        <Insets bottom="4.0" top="4.0" />
+                     </HBox.margin>
+                  </Label>
+                  <FlowPane alignment="CENTER_LEFT" columnHalignment="CENTER" hgap="6.0" layoutX="14.0" layoutY="13.0" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="3.0" left="6.0" right="6.0" top="3.0" />
+                     </padding>
+                     <children>
+                        <Label fx:id="noTplSelLbl" styleClass="info" text="" />
+                        <Label text="%SELECTED_TEMPLATES" />
+                        <Label fx:id="selTplsLbl" text="0" />
+                     </children>
+                  </FlowPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox fx:id="overlayHB" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="overlay" visible="false">
+         <children>
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <VBox fx:id="successMsgVB" alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" opacity="0.0" prefWidth="360.0" styleClass="modal" translateY="-300.0" visible="false" StackPane.alignment="TOP_CENTER">
+         <children>
+            <Button fx:id="successMsgCloseBtn" mnemonicParsing="false" text="">
+               <styleClass>
+                  <String fx:value="icon" />
+                  <String fx:value="transparent-btn" />
+               </styleClass></Button>
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="12.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" minWidth="96.0" text="">
+                           <styleClass>
+                              <String fx:value="tick" />
+                              <String fx:value="icon" />
+                           </styleClass></Label>
+                        <Label fx:id="counterLbl" text="0">
+                           <styleClass>
+                              <String fx:value="counter" />
+                              <String fx:value="icon" />
+                           </styleClass></Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="12.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="message" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="message" text="%SUCCESS_MESSAGE" wrapText="true" VBox.vgrow="ALWAYS" />
+                        <Label fx:id="path" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="emphasize" text="Path" wrapText="true" />
+                        <Button fx:id="openBtn" mnemonicParsing="false" styleClass="btn" text="%OPEN">
+                           <graphic>
+                              <Label text="">
+                                 <styleClass>
+                                    <String fx:value="label" />
+                                    <String fx:value="icon" />
+                                 </styleClass></Label>
+                           </graphic>
+                           <VBox.margin>
+                              <Insets top="12.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="6.0" left="12.0" right="12.0" top="6.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="12.0" left="4.0" right="4.0" top="4.0" />
+               </padding>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="4.0" left="2.0" right="2.0" top="4.0" />
+         </padding>
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+      </VBox>
+      <VBox fx:id="quitMsgVB" alignment="TOP_RIGHT" layoutX="314.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" opacity="0.0" prefWidth="360.0" styleClass="modal" translateY="-300.0" visible="false" StackPane.alignment="TOP_CENTER">
+         <children>
+            <Button fx:id="quitMsgCloseBtn" mnemonicParsing="false" text="">
+               <styleClass>
+                  <String fx:value="transparent-btn" />
+                  <String fx:value="icon" />
+               </styleClass></Button>
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="12.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" minWidth="96.0" text="">
+                           <styleClass>
+                              <String fx:value="tick" />
+                              <String fx:value="icon" />
+                           </styleClass></Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="12.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="message" text="%QUIT_MESSAGE" wrapText="true" VBox.vgrow="ALWAYS" />
+                        <HBox alignment="CENTER" maxWidth="1.7976931348623157E308" spacing="12.0">
+                           <children>
+                              <Button fx:id="quitMsgCancelBtn" mnemonicParsing="false" styleClass="btn" text="%CANCEL">
+                                 <padding>
+                                    <Insets bottom="6.0" left="12.0" right="12.0" top="6.0" />
+                                 </padding>
+                              </Button>
+                              <Button fx:id="quitMsgOkBtn" mnemonicParsing="false" styleClass="btn" text="%OK">
+                                 <padding>
+                                    <Insets bottom="6.0" left="12.0" right="12.0" top="6.0" />
+                                 </padding>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="12.0" left="4.0" right="4.0" top="4.0" />
+               </padding>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="4.0" left="2.0" right="2.0" top="4.0" />
+         </padding>
+      </VBox>
+      <VBox fx:id="loadDbVB" alignment="TOP_RIGHT" layoutX="314.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" opacity="0.0" prefWidth="540.0" styleClass="modal" translateY="-500.0" visible="false" StackPane.alignment="TOP_CENTER">
+         <children>
+            <Button fx:id="loadDbCloseBtn" mnemonicParsing="false" text="">
+               <styleClass>
+                  <String fx:value="icon" />
+                  <String fx:value="transparent-btn" />
+               </styleClass></Button>
+            <fx:include fx:id="loadDbIncHB" source="DBSelector.fxml" />
+         </children>
+         <padding>
+            <Insets bottom="12.0" left="2.0" right="2.0" top="4.0" />
+         </padding>
+      </VBox>
+      <VBox fx:id="aboutVB" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" opacity="0.0" prefWidth="480.0" styleClass="modal" translateY="-500.0" visible="false" StackPane.alignment="TOP_CENTER">
+         <children>
+            <FlowPane id="header" alignment="CENTER_LEFT" hgap="8.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="8.0" left="12.0" right="8.0" top="8.0" />
+               </padding>
+               <children>
+                  <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/logos/64-light.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="appName" styleClass="title" text="title">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+            <VBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="message" text="Laiha is published under GNU General Public License. i.e. It's a free software; you can redistribute it and/or modify it (with Classpath exception)..." textAlignment="JUSTIFY" wrapText="true">
+                     <VBox.margin>
+                        <Insets top="6.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label layoutX="22.0" layoutY="55.0" styleClass="title" text="Build informations:" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="buildInfos" layoutX="22.0" layoutY="116.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="message" text="Version: %version%&#10;Date: %date%&#10;Java Version: 1.8.0_171-b11, Oracle Corporation&#10;PDFBox Version: 2.0.20, Apache Software Foundation&#10;POI Version: 3.15, Apache Software Foundation&#10;XmlBeans version: 2.6.0-r1364789, Apache Software Foundation&#10;Commons Logging Version: 1.2.0, Apache Software Foundation&#10;FontBox Version: 2.0.20, Apache Software Foundation&#10;Commons Collections Verion: 4.1, Apache Software Foundation&#10;SQLite JDBC library Version: 3.16.1&#10;ICU4J Version: 64.2, Unicode, Inc." wrapText="true" />
+                  <Label layoutX="22.0" layoutY="78.0" styleClass="message" text="Author: H. KASSIMI [ hafid.kassimi@mdrassty.net ]">
+                     <VBox.margin>
+                        <Insets top="6.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+               </padding>
+            </VBox>
+         </children>
+      </VBox>
+      <VBox fx:id="previewVB" alignment="TOP_RIGHT" layoutX="224.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" opacity="0.0" styleClass="modal" translateY="-700.0" visible="false" StackPane.alignment="TOP_CENTER">
+         <children>
+            <Button fx:id="previewCloseBtn" mnemonicParsing="false" text="">
+               <styleClass>
+                  <String fx:value="icon" />
+                  <String fx:value="transparent-btn" />
+               </styleClass></Button>
+            <fx:include fx:id="previewBodyVB" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" source="Preview.fxml" />
+         </children>
+         <padding>
+            <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+         </padding>
+      </VBox>
+      <VBox fx:id="settingsVB" alignment="TOP_RIGHT" layoutX="78.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" opacity="0.0" styleClass="modal" translateY="-500.0" visible="false" StackPane.alignment="TOP_CENTER">
+         <children>
+            <Button fx:id="settingsCloseBtn" mnemonicParsing="false" text="">
+               <styleClass>
+                  <String fx:value="icon" />
+                  <String fx:value="transparent-btn" />
+               </styleClass></Button>
+            <VBox fx:id="settingsBodyVB" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+         </children>
+         <padding>
+            <Insets bottom="12.0" left="2.0" right="2.0" top="4.0" />
+         </padding>
+      </VBox>
+      <VBox fx:id="loadMarksVB" alignment="TOP_RIGHT" layoutX="230.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" opacity="0.0" prefWidth="540.0" styleClass="modal" translateY="-500.0" visible="false" StackPane.alignment="TOP_CENTER">
+         <children>
+            <Button fx:id="loadMarksCloseBtn" mnemonicParsing="false" text="">
+               <styleClass>
+                  <String fx:value="icon" />
+                  <String fx:value="transparent-btn" />
+               </styleClass>
+            </Button>
+            <fx:include fx:id="loadMarksIncHB" source="ADDITIONAL_DATA.fxml" />
+         </children>
+         <padding>
+            <Insets bottom="12.0" left="2.0" right="2.0" top="4.0" />
+         </padding>
+      </VBox>
+   </children>
+</StackPane>

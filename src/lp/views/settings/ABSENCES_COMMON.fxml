@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lp.controllers.settings.AbsencesCommonController">
+   <children>
+      <TabPane fx:id="tabs" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab closable="false" text="%DATE">
+               <content>
+                  <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="12.0">
+                     <padding>
+                        <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+                     </padding>
+                     <children>
+                        <Label maxWidth="1.7976931348623157E308" styleClass="title" text="%FIRST_WEEK_DAY" />
+                        <Label contentDisplay="RIGHT" graphicTextGap="6.0" text="%CHOOSE_FIRST_WEEK_DAY">
+                           <graphic>
+                              <ComboBox fx:id="firstDayCB" prefWidth="150.0" />
+                           </graphic>
+                           <padding>
+                              <Insets left="12.0" right="12.0" />
+                           </padding>
+                        </Label>
+                        <Label maxWidth="1.7976931348623157E308" styleClass="title" text="%SHEET_DATE">
+                           <VBox.margin>
+                              <Insets bottom="6.0" top="6.0" />
+                           </VBox.margin>
+                        </Label>
+                        <VBox maxWidth="1.7976931348623157E308" spacing="12.0" VBox.vgrow="NEVER">
+                           <children>
+                              <RadioButton fx:id="curWeekRB" contentDisplay="RIGHT" graphicTextGap="6.0" mnemonicParsing="false" styleClass="light" text="%CURRENT_WEEK">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="selectedWeek" />
+                                 </toggleGroup>
+                                 <graphic>
+                                    <Label fx:id="curWeekL" styleClass="message" text="Label" />
+                                 </graphic>
+                              </RadioButton>
+                              <RadioButton fx:id="nextWeekRB" contentDisplay="RIGHT" graphicTextGap="6.0" mnemonicParsing="false" styleClass="light" text="%NEXT_WEEK" toggleGroup="$selectedWeek">
+                                 <graphic>
+                                    <Label fx:id="nextWeekL" styleClass="message" text="Label" />
+                                 </graphic>
+                              </RadioButton>
+                              <FlowPane hgap="12.0">
+                                 <children>
+                                    <RadioButton fx:id="othWeekRB" mnemonicParsing="false" styleClass="light" text="%OTHER_WEEK" toggleGroup="$selectedWeek" />
+                                    <ComboBox fx:id="selWeekCB" prefWidth="150.0" />
+                                    <Label fx:id="otherWeekL" styleClass="message" text="Label" />
+                                 </children>
+                              </FlowPane>
+                           </children>
+                           <padding>
+                              <Insets left="12.0" right="12.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="%HEADER">
+               <content>
+                  <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="12.0">
+                     <children>
+                        <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="24.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="12.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="6.0" maxWidth="1.7976931348623157E308" text="%SHEET_TITLE">
+                                       <graphic>
+                                          <TextField fx:id="shtTitleTF" maxWidth="1.7976931348623157E308" />
+                                       </graphic>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="6.0" maxWidth="1.7976931348623157E308" text="%TO_ADMINISTRATION">
+                                       <graphic>
+                                          <TextField fx:id="toAdminTF" maxWidth="1.7976931348623157E308" />
+                                       </graphic>
+                                    </Label>
+                                    <Label fx:id="signatureL" alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="6.0" maxWidth="1.7976931348623157E308" text="%SIGNATURE">
+                                       <graphic>
+                                          <TextField fx:id="signatureTF" maxWidth="1.7976931348623157E308" />
+                                       </graphic>
+                                    </Label>
+                                    <Label fx:id="surDeskL" alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="6.0" maxWidth="1.7976931348623157E308" text="%SURVEILANCE_DESKTOP">
+                                       <graphic>
+                                          <TextField fx:id="survDeskTF" maxWidth="1.7976931348623157E308" />
+                                       </graphic>
+                                    </Label>
+                                    <Label fx:id="survNumL" alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="6.0" maxWidth="1.7976931348623157E308" text="%SURVEILANCE_NUMERO">
+                                       <graphic>
+                                          <TextField fx:id="survNumTF" maxWidth="1.7976931348623157E308" />
+                                       </graphic>
+                                    </Label>
+                                    <Separator prefWidth="200.0" />
+                                    <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="6.0" maxWidth="1.7976931348623157E308" text="%MORNING_PERIOD">
+                                       <graphic>
+                                          <TextField fx:id="mornTF" maxWidth="1.7976931348623157E308" />
+                                       </graphic>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="6.0" maxWidth="1.7976931348623157E308" text="%AFTERNOON_PERIOD">
+                                       <graphic>
+                                          <TextField fx:id="aftTF" maxWidth="1.7976931348623157E308" />
+                                       </graphic>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <HBox fx:id="hoursHeaderVB" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="24.0">
+                                 <children>
+                                    <Separator orientation="VERTICAL" />
+                                    <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="12.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" ellipsisString="" graphicTextGap="6.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="%MORNING_1" textAlignment="RIGHT" textOverrun="CLIP" wrapText="true">
+                                             <graphic>
+                                                <TextField fx:id="m1TF" />
+                                             </graphic>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="6.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="%MORNING_2" textAlignment="RIGHT" textOverrun="CLIP" wrapText="true">
+                                             <graphic>
+                                                <TextField fx:id="m2TF" />
+                                             </graphic>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="6.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="%MORNING_3" textAlignment="RIGHT" textOverrun="CLIP" wrapText="true">
+                                             <graphic>
+                                                <TextField fx:id="m3TF" />
+                                             </graphic>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="6.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="%MORNING_4" textAlignment="RIGHT" textOverrun="CLIP" wrapText="true">
+                                             <graphic>
+                                                <TextField fx:id="m4TF" />
+                                             </graphic>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="6.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="%AFTERNOON_1" textAlignment="RIGHT" textOverrun="CLIP" wrapText="true">
+                                             <graphic>
+                                                <TextField fx:id="a1TF" />
+                                             </graphic>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="6.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="%AFTERNOON_2" textAlignment="RIGHT" textOverrun="CLIP" wrapText="true">
+                                             <graphic>
+                                                <TextField fx:id="a2TF" />
+                                             </graphic>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="6.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="%AFTERNOON_3" textAlignment="RIGHT" textOverrun="CLIP" wrapText="true">
+                                             <graphic>
+                                                <TextField fx:id="a3TF" />
+                                             </graphic>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="6.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="%AFTERNOON_4" textAlignment="RIGHT" textOverrun="CLIP" wrapText="true">
+                                             <graphic>
+                                                <TextField fx:id="a4TF" />
+                                             </graphic>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="%HOLIDAYS_PERIODS">
+               <content>
+                  <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" hgrow="NEVER" minWidth="120.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="160.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="160.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints vgrow="NEVER" />
+                        <RowConstraints prefHeight="36.0" vgrow="NEVER" />
+                        <RowConstraints prefHeight="36.0" vgrow="NEVER" />
+                        <RowConstraints prefHeight="36.0" vgrow="NEVER" />
+                        <RowConstraints prefHeight="36.0" vgrow="NEVER" />
+                        <RowConstraints prefHeight="36.0" vgrow="NEVER" />
+                        <RowConstraints prefHeight="36.0" vgrow="NEVER" />
+                     </rowConstraints>
+                     <children>
+                        <Label fx:id="day1L" alignment="CENTER_RIGHT" text="Label" textAlignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets right="6.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets bottom="6.0" top="6.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="day2L" alignment="CENTER_RIGHT" text="Label" textAlignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="2">
+                           <padding>
+                              <Insets right="6.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets bottom="6.0" top="6.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="day3L" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="47.0" text="Label" textAlignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="3">
+                           <padding>
+                              <Insets right="6.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets bottom="6.0" top="6.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="day4L" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="77.0" text="Label" textAlignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="4">
+                           <padding>
+                              <Insets right="6.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets bottom="6.0" top="6.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="day5L" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="107.0" text="Label" textAlignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="5">
+                           <padding>
+                              <Insets right="6.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets bottom="6.0" top="6.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="day6L" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="137.0" text="Label" textAlignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="6">
+                           <padding>
+                              <Insets right="6.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets bottom="6.0" top="6.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="167.0" text="%MORNING_PERIOD" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="6.0" left="24.0" right="24.0" top="6.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="197.0" text="%AFTERNOON_PERIOD" GridPane.columnIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="6.0" left="24.0" right="24.0" top="6.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <CheckBox fx:id="d1mCB" alignment="CENTER" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </padding>
+                        </CheckBox>
+                        <CheckBox fx:id="d1aCB" alignment="CENTER" layoutX="211.0" layoutY="47.0" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </padding>
+                        </CheckBox>
+                        <CheckBox fx:id="d2mCB" alignment="CENTER" layoutX="211.0" layoutY="47.0" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <padding>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </padding>
+                        </CheckBox>
+                        <CheckBox fx:id="d2aCB" alignment="CENTER" layoutX="411.0" layoutY="47.0" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <padding>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </padding>
+                        </CheckBox>
+                        <CheckBox fx:id="d3mCB" alignment="CENTER" layoutX="211.0" layoutY="47.0" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <padding>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </padding>
+                        </CheckBox>
+                        <CheckBox fx:id="d3aCB" alignment="CENTER" layoutX="411.0" layoutY="47.0" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <padding>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </padding>
+                        </CheckBox>
+                        <CheckBox fx:id="d4mCB" alignment="CENTER" layoutX="211.0" layoutY="77.0" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <padding>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </padding>
+                        </CheckBox>
+                        <CheckBox fx:id="d4aCB" alignment="CENTER" layoutX="411.0" layoutY="77.0" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                           <padding>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </padding>
+                        </CheckBox>
+                        <CheckBox fx:id="d5mCB" alignment="CENTER" layoutX="211.0" layoutY="107.0" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <padding>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </padding>
+                        </CheckBox>
+                        <CheckBox fx:id="d5aCB" alignment="CENTER" layoutX="411.0" layoutY="107.0" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                           <padding>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </padding>
+                        </CheckBox>
+                        <CheckBox fx:id="d6mCB" alignment="CENTER" layoutX="211.0" layoutY="137.0" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                           <padding>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </padding>
+                        </CheckBox>
+                        <CheckBox fx:id="d6aCB" alignment="CENTER" layoutX="411.0" layoutY="137.0" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                           <padding>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </padding>
+                        </CheckBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+                     </padding>
+                  </GridPane>
+               </content>
+            </Tab>
+            <Tab fx:id="listSettingsTab" text="%GENERAL_LISTS_SETTINGS">
+               <content>
+                  <fx:include fx:id="genLstSet" source="LIST_ROWS.fxml" />
+               </content>
+            </Tab>
+            <Tab fx:id="formatTab" text="%FORMAT">
+               <content>
+                  <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="12.0">
+                     <children>
+                        <VBox spacing="18.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <CheckBox fx:id="bolderCB" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="light" text="%BOLDERIFY_NAMES">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </CheckBox>
+                              <FlowPane>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label styleClass="title" text="%ALIGNMENT">
+                                       <FlowPane.margin>
+                                          <Insets right="12.0" />
+                                       </FlowPane.margin>
+                                    </Label>
+                                    <ToggleButton fx:id="leftBtn" mnemonicParsing="false" styleClass="icm" text="">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="namesAlign" />
+                                       </toggleGroup>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="centerBtn" mnemonicParsing="false" styleClass="icm" text="" toggleGroup="$namesAlign" />
+                                    <ToggleButton fx:id="rightBtn" mnemonicParsing="false" styleClass="icm" text="" toggleGroup="$namesAlign" />
+                                 </children>
+                              </FlowPane>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab fx:id="msgTab" text="%CUSTOM_MESSAGE">
+               <content>
+                  <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="12.0">
+                     <padding>
+                        <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+                     </padding>
+                     <children>
+                        <TextArea fx:id="customMsgTA" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefRowCount="5" wrapText="true" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</VBox>

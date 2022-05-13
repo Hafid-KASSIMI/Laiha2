@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="12.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lp.controllers.settings.ListGeneralController">
+   <children>
+      <Label layoutX="22.0" layoutY="166.0" maxWidth="1.7976931348623157E308" styleClass="title" text="%LISTS_FORMAT" />
+      <CheckBox fx:id="stripCB" contentDisplay="RIGHT" graphicTextGap="12.0" layoutX="22.0" layoutY="75.0" mnemonicParsing="false" styleClass="message" text="%STRIP_TABLE" />
+      <VBox spacing="12.0">
+         <children>
+            <Label contentDisplay="RIGHT" graphicTextGap="12.0" styleClass="message" text="%STRIP_INDEX">
+               <graphic>
+                  <Spinner fx:id="stripIndexSp" editable="true" />
+               </graphic>
+            </Label>
+            <HBox alignment="CENTER_LEFT" spacing="12.0">
+               <children>
+                  <Label contentDisplay="RIGHT" graphicTextGap="12.0" styleClass="message" text="%STRIP_COLOR" />
+                  <ColorPicker fx:id="stripCP" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="48.0" />
+                  <Label fx:id="selColLbl" styleClass="message" />
+               </children>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets left="24.0" right="24.0" />
+         </padding>
+      </VBox>
+      <Label maxWidth="1.7976931348623157E308" styleClass="title" text="%ROWS_COUNT" />
+      <CheckBox fx:id="uniLevRowsCB" layoutX="22.0" layoutY="22.0" mnemonicParsing="false" styleClass="message" text="%UNIFY_ROWS_LEVEL">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin></CheckBox>
+      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="12.0" styleClass="message" text="%ADDITIONAL_EMPTY_ROWS">
+         <graphic>
+            <Spinner fx:id="emptyRowsSp" editable="true" />
+         </graphic>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Label>
+      <Label contentDisplay="RIGHT" graphicTextGap="12.0" layoutX="22.0" layoutY="80.0" styleClass="message" text="%DOUBLE_PAGE_SIZE">
+         <graphic>
+            <Spinner fx:id="doublePgSizeSp" editable="true" />
+         </graphic>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Label>
+   </children>
+   <padding>
+      <Insets bottom="24.0" left="12.0" right="12.0" top="24.0" />
+   </padding>
+</VBox>

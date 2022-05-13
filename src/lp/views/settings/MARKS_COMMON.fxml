@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="12.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lp.controllers.settings.MarksCommonController">
+   <children>
+      <TabPane fx:id="tabsTP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="%PARTICULAR_SETTINGS">
+               <content>
+                  <VBox alignment="CENTER_LEFT" minWidth="540.0" spacing="12.0">
+                     <children>
+                        <Label maxWidth="1.7976931348623157E308" styleClass="title" text="%TEMPLATE_TITLE" />
+                        <TextField fx:id="titleTF" maxWidth="1.7976931348623157E308">
+                           <VBox.margin>
+                              <Insets left="12.0" right="12.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label fx:id="separatorLb" maxWidth="1.7976931348623157E308" styleClass="title" text="%SCHOOL_INFOS_SEPARATOR">
+                           <VBox.margin>
+                              <Insets top="12.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="separatorTF" maxWidth="1.7976931348623157E308" promptText="%SCHOOL_INFOS_SEPARATOR_SAMPLE">
+                           <VBox.margin>
+                              <Insets left="12.0" right="12.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label fx:id="customStrLb" maxWidth="1.7976931348623157E308" styleClass="title" text="%TEMPLATE_CUSTOM_STRING">
+                           <VBox.margin>
+                              <Insets top="12.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="customStrTF" maxWidth="1.7976931348623157E308">
+                           <VBox.margin>
+                              <Insets left="12.0" right="12.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label maxWidth="1.7976931348623157E308" styleClass="title" text="%NAMES_FORMAT">
+                           <VBox.margin>
+                              <Insets top="12.0" />
+                           </VBox.margin>
+                        </Label>
+                        <VBox spacing="18.0">
+                           <children>
+                              <CheckBox fx:id="bolderCB" mnemonicParsing="false" styleClass="message" text="%BOLDERIFY_NAMES">
+                                 <VBox.margin>
+                                    <Insets left="12.0" />
+                                 </VBox.margin>
+                              </CheckBox>
+                              <FlowPane>
+                                 <VBox.margin>
+                                    <Insets left="12.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label styleClass="message" text="%ALIGNMENT">
+                                       <FlowPane.margin>
+                                          <Insets right="10.0" />
+                                       </FlowPane.margin>
+                                    </Label>
+                                    <ToggleButton fx:id="leftBtn" mnemonicParsing="false" styleClass="icm" text="">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="namesAlign" />
+                                       </toggleGroup>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="centerBtn" mnemonicParsing="false" styleClass="icm" text="" toggleGroup="$namesAlign" />
+                                    <ToggleButton fx:id="rightBtn" mnemonicParsing="false" styleClass="icm" text="" toggleGroup="$namesAlign" />
+                                 </children>
+                              </FlowPane>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="24.0" left="12.0" right="12.0" top="24.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab fx:id="ccMarksTab" text="%CC_MARKS">
+               <content>
+                  <VBox spacing="24.0">
+                     <padding>
+                        <Insets bottom="24.0" left="12.0" right="12.0" top="24.0" />
+                     </padding>
+                     <children>
+                        <CheckBox fx:id="marksCB" mnemonicParsing="false" styleClass="message" text="%INCLUDE_MARKS">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </CheckBox>
+                        <HBox alignment="CENTER_LEFT" spacing="12.0">
+                           <children>
+                              <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="message" text="%MATTER_SC" />
+                              <ComboBox fx:id="mattersCMB" maxWidth="1.7976931348623157E308" prefWidth="160.0" />
+                              <Separator orientation="VERTICAL">
+                                 <HBox.margin>
+                                    <Insets left="6.0" right="6.0" />
+                                 </HBox.margin>
+                              </Separator>
+                              <Label layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="message" text="%SEMESTER_SC" />
+                              <ComboBox fx:id="semestersCMB" layoutX="50.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefWidth="160.0" />
+                           </children>
+                           <VBox.margin>
+                              <Insets left="12.0" right="12.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" spacing="6.0">
+                           <children>
+                              <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="icm" text="" wrapText="true" />
+                              <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="300.0" styleClass="message" text="%LOAD_MARKS_WARNING" wrapText="true" HBox.hgrow="ALWAYS" />
+                           </children>
+                           <VBox.margin>
+                              <Insets left="12.0" right="12.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="%GENERAL_LISTS_SETTINGS">
+               <content>
+                  <fx:include fx:id="genLstSet" source="LIST_ROWS.fxml" />
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</VBox>
