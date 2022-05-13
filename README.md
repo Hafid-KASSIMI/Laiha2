@@ -5,11 +5,11 @@
 ## Technologies
 Java 8
 ### Dependencies
-+ **PDFBox**, Apache Software Foundation
-+ **POI**, Apache Software Foundation
-+ **XmlBeans**, Apache Software Foundation
-+ **Commons Logging**, Apache Software Foundation
-+ **FontBox**, Apache Software Foundation
-+ **Commons Collections**, Apache Software Foundation
++ **PDFBox**, Apache Software Foundation.
++ **POI**, Apache Software Foundation.
++ **XmlBeans**, Apache Software Foundation.
++ **Commons Logging**, Apache Software Foundation.
++ **FontBox**, Apache Software Foundation.
++ **Commons Collections**, Apache Software Foundation.
 + **SQLite JDBC library**.
 + **ICU4J**, Unicode, Inc.
